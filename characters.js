@@ -23,11 +23,16 @@ export const CHARACTERS = {
 { id: "la", name: "Floor of Language, Gebura", image: "la.png" },
 { id: "ss", name: "Floor of Social Sciences, Chesed", image: "ss.png" },
 { id: "ph", name: "Floor of Philosophy, Binah", image: "ph.png" },
-{ id: "re", name: "Floor of Religion, Hokma", image: "re.png" }
+{ id: "re", name: "Floor of Religion, Hokma", image: "re.png" }, 
+        //ttou
+    { id: "g", name: "The Alternate Scientist, G", image: "g.png" },
+       { id: "nathan", name: "The Red Dust Prodigy, Nathan Redshed", image: "nathan.png" },
+       { id: "paxton", name: "The Elemental Master, Paxton", image: "paxton.png" },
+       { id: "karos", name: "The Universe Emperor, Karos Lethon", image: "karos.png" }
   ],
   black: [
-    { id: "bc1", name: "blkc1", image: "blkc1.jpg" },
-    
+    { id: "333", name: "Void LordGod, The 333", image: "333.png" },
+
   ]
 };
 export function randomCharacterByRarity(rarity) {

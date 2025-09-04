@@ -18,7 +18,8 @@ export function i18n(key){
       easy_mode: 'Easy Mode',
       roll: 'Roll',
       rolling: 'Rolling...',
-      not_enough: 'Not enough StellarCoin'
+      not_enough: 'Not enough StellarCoin',
+      gallery: 'Gallery'
     },
     zh: {
       language_label: '语言',
@@ -27,7 +28,8 @@ export function i18n(key){
       easy_mode: '简单模式',
       roll: '抽卡',
       rolling: '抽取中...',
-      not_enough: '星币不足'
+      not_enough: '星币不足',
+      gallery: '画廊'
     }
   };
   return (dict[lang] && dict[lang][key]) || dict['en'][key] || key;
@@ -35,6 +37,7 @@ export function i18n(key){
 
 // mapping from character english name (as appears in characters.js) to Chinese
 const CHAR_CN = {
+  //red
   "#1 Sinner, Yi Sang": "第一位罪人，李箱",
   "#2 Sinner, Faust": "第二位罪人，浮士德",
   "#3 Sinner, Don Quixote": "第三位罪人，堂吉诃德",
@@ -57,7 +60,14 @@ const CHAR_CN = {
   "Floor of Literature, Hod": "文学层，霍娣",
   "Floor of Technological Sciences, Yesod": "科技层，耶索德",
   "Floor of History, Malkuth": "历史层，玛库特",
-  "Floor of General Works, Roland": "总类层，罗兰"
+  "Floor of General Works, Roland": "总类层，罗兰",
+  "The Alternate Scientist, G":"伪人科学家，G",
+  "The Alternate Scientist, Geneti Phulst":"伪人科学家，杰尼提·法斯特",
+  "The Red Dust Prodigy, Nathan Redshed":"血尘天骄，内森·雷德谢德",
+  "The Elemental Master, Paxton":"元素大师，帕克斯顿",
+  "The Universe Emperor, Karos Lethon":"宇宙帝王，卡洛斯·雷森",
+  //black
+  "Void LordGod, The 333":"虚无主神，333"
 };
 
 export function charNameFor(engName){
