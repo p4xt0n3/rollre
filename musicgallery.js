@@ -35,6 +35,17 @@ const ENTRIES = [
       { label: 'Stage 1', src: 'nstg1.mp3' },
       { label: 'Stage 2', src: 'nstg2.mp3' }
     ]
+  },
+  {
+    character: 'Joseph Joca',
+    mainName: 'Joker Joker',
+    tracks: [
+      { label: 'Whole Music • Joker Joker', src: 'Joker Joker.mp3' },
+      { label: 'Whole Music • The Joker\'s Game', src: 'The Joker\'s Game.mp3' },
+      { label: 'Whole Music • JOKER!!', src: 'JOKER!!.mp3' },
+      { label: 'Whole Music • Funny Moment', src: 'Funny Moment.mp3' },
+      { label: 'Whole Music • The Joker\'s Orchestra', src: 'The Joker\'s Orchestra.mp3' }
+    ]
   }
 ];
 
