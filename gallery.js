@@ -166,17 +166,17 @@ function cardFor(c){
 }
 
 function showCharacterModal(c) {
-  // If this is Geneti, require mcpass unlock before showing info
+  // If this is Geneti, require scpass unlock before showing info
   if (c.id === 'g') {
-    // open morse lock and wait for success event once
-    if (window.mcpassOpen) window.mcpassOpen();
-    // mcpass.js dispatches 'mcpass:success' on success
+    // open symbol lock and wait for success event once
+    if (window.scpassOpen) window.scpassOpen();
+    // scpass.js dispatches 'scpass:success' on success
     const onSucc = (ev) => {
-      window.removeEventListener('mcpass:success', onSucc);
+      window.removeEventListener('scpass:success', onSucc);
       // proceed to show normally after unlock
       actuallyShow();
     };
-    window.addEventListener('mcpass:success', onSucc, { once: true });
+    window.addEventListener('scpass:success', onSucc, { once: true });
     return;
   }
 
