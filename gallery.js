@@ -166,54 +166,73 @@ function cardFor(c){
 }
 
 function showCharacterModal(c) {
-  miniPanel.innerHTML = '';
-  
-  // Character image
-  const img = document.createElement('img'); 
-  img.src = c.image; 
-  img.alt = c.name;
-  img.style.width = '100%'; 
-  img.style.borderRadius = '10px'; 
-  img.style.marginBottom = '12px';
-  
-  // Character name
-  const title = document.createElement('div'); 
-  title.style.fontWeight='800'; 
-  title.style.marginBottom='8px'; 
-  title.textContent = currentLang()==='zh' ? (charNameFor(c.name) || c.name) : c.name;
-  
-  // Quote
-  const quote = document.createElement('div');
-  quote.style.fontStyle = 'italic';
-  quote.style.fontSize = '14px';
-  quote.style.marginBottom = '12px';
-  quote.style.padding = '10px';
-  quote.style.background = 'rgba(255,255,255,0.05)';
-  quote.style.borderRadius = '8px';
-  quote.style.borderLeft = '3px solid var(--accent)';
-  
-  // Description
-  const desc = document.createElement('div'); 
-  desc.style.fontSize = '13px';
-  desc.style.lineHeight = '1.5';
-  
-  // Check if we have special data for this character
-  const charId = c.id;
-  if (CHARACTER_DATA[charId]) {
-    quote.textContent = CHARACTER_DATA[charId].quote;
-    desc.textContent = currentLang() === 'zh' ? 
-      CHARACTER_DATA[charId].cnDesc : 
-      CHARACTER_DATA[charId].engDesc;
-  } else {
-    // Default behavior for characters without special data
-    quote.textContent = currentLang() === 'zh' ? '名言待添加...' : 'Quote coming soon...';
-    desc.textContent = currentLang() === 'zh' ? 
-      '该角色的详细描述将稍后添加。' : 
-      'Detailed description coming soon.';
+  // If this is Geneti, require mcpass unlock before showing info
+  if (c.id === 'g') {
+    // open morse lock and wait for success event once
+    if (window.mcpassOpen) window.mcpassOpen();
+    // mcpass.js dispatches 'mcpass:success' on success
+    const onSucc = (ev) => {
+      window.removeEventListener('mcpass:success', onSucc);
+      // proceed to show normally after unlock
+      actuallyShow();
+    };
+    window.addEventListener('mcpass:success', onSucc, { once: true });
+    return;
   }
-  
-  miniPanel.append(title, img, quote, desc, miniClose);
-  mini.classList.add('show');
+
+  // otherwise show immediately
+  actuallyShow();
+
+  function actuallyShow(){
+    miniPanel.innerHTML = '';
+    
+    // Character image
+    const img = document.createElement('img'); 
+    img.src = c.image; 
+    img.alt = c.name;
+    img.style.width = '100%'; 
+    img.style.borderRadius = '10px'; 
+    img.style.marginBottom = '12px';
+    
+    // Character name
+    const title = document.createElement('div'); 
+    title.style.fontWeight='800'; 
+    title.style.marginBottom='8px'; 
+    title.textContent = currentLang()==='zh' ? (charNameFor(c.name) || c.name) : c.name;
+    
+    // Quote
+    const quote = document.createElement('div');
+    quote.style.fontStyle = 'italic';
+    quote.style.fontSize = '14px';
+    quote.style.marginBottom = '12px';
+    quote.style.padding = '10px';
+    quote.style.background = 'rgba(255,255,255,0.05)';
+    quote.style.borderRadius = '8px';
+    quote.style.borderLeft = '3px solid var(--accent)';
+    
+    // Description
+    const desc = document.createElement('div'); 
+    desc.style.fontSize = '13px';
+    desc.style.lineHeight = '1.5';
+    
+    // Check if we have special data for this character
+    const charId = c.id;
+    if (CHARACTER_DATA[charId]) {
+      quote.textContent = CHARACTER_DATA[charId].quote;
+      desc.textContent = currentLang() === 'zh' ? 
+        CHARACTER_DATA[charId].cnDesc : 
+        CHARACTER_DATA[charId].engDesc;
+    } else {
+      // Default behavior for characters without special data
+      quote.textContent = currentLang() === 'zh' ? '名言待添加...' : 'Quote coming soon...';
+      desc.textContent = currentLang() === 'zh' ? 
+        '该角色的详细描述将稍后添加。' : 
+        'Detailed description coming soon.';
+    }
+    
+    miniPanel.append(title, img, quote, desc, miniClose);
+    mini.classList.add('show');
+  }
 }
 
 function showCharacters(){

@@ -81,7 +81,6 @@ function press(n){
 
 if (fab) {
   fab.addEventListener('click', ()=>{ overlay.classList.add('show'); newPuzzle(); });
-} else {
-  // If fab not found for some reason, expose function to open manually
-  window.mcpassOpen = ()=>{ overlay.classList.add('show'); newPuzzle(); };
 }
+// always expose opener for other modules (gallery)
+window.mcpassOpen = ()=>{ overlay.classList.add('show'); newPuzzle(); };
