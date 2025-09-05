@@ -19,6 +19,8 @@ const ENTRIES = [
     mainName: 'Incoercibilis',
     tracks: [
       { label: 'Whole Music • Incoercibilis', src: 'Incoercibilis.mp3' },
+      { label: 'Whole Music • Vera Alternativa', src: 'Vera Alternativa.mp3' },
+      { label: 'Whole Music • Caedes Fluitans', src: 'Caedes Fluitans.mp3' },
       { label: 'Stage 1', src: 'gstg1.mp3' },
       { label: 'Stage 2', src: 'gstg2.mp3' }
     ]
@@ -28,6 +30,8 @@ const ENTRIES = [
     mainName: 'Eos Trucidavit',
     tracks: [
       { label: 'Whole Music • Eos Trucidavit', src: 'Eos Trucidavit.mp3' },
+      { label: 'Whole Music • Underworld Ruler', src: 'Underworld Ruler.mp3' },
+      { label: 'Whole Music • The Red Dust', src: 'The Red Dust.mp3' },
       { label: 'Stage 1', src: 'nstg1.mp3' },
       { label: 'Stage 2', src: 'nstg2.mp3' }
     ]
