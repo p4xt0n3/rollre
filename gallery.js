@@ -139,6 +139,11 @@ const CHARACTER_DATA = {
     quote: "All Alternates, Including me, Speaks in Base64, But I can speak normal with you.",
     engDesc: "G, full name Geneti Phulst, is the Founder and Supreme Tier Scientist of the G Foundation. Usually, he is far from normal, often speaking in Base64 with strangers, since Base64 is the native language of the Alternate Race. However, G himself is not ordinary—he is a vessel, the strongest vessel containing a Void LordGod. He is the Void itself.",
     cnDesc: "G，全名杰尼提·法斯特，G基金会的会长和至高科学家。他并不正常，经常用Base64语言与陌生人交流，而伪人的母语正是Base64。但G本人并非普通人，而是一个载体，一个极其强大的载体，体内收容着一位虚空主神……他就是虚空的化身。"
+  },
+  nathan: {
+    quote: "O Natz Yuary, O Hxotmy znks hgiq zu cnkxk znke yzge...",
+    engDesc: "Nathan Redshed, the Lord of Underworld, also the Red Dust Prodigy, the being who makes every soulborne stay in fear every minute every second; for them, Nathan is the most lethal being.",
+    cnDesc: "内森·雷德谢德，冥界之主，也是血尘天骄，是一个让所有魂系生物畏惧的存在，对他们来说，听到内森的名字就会被吓得到处逃逸。"
   }
 };
 
